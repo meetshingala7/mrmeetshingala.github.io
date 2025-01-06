@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            /* margin: 0;
+            padding: 0; */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0px auto 0px auto;
+            /* margin: 0 auto; */
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            max-width: 1200px;
+            margin-left: 15%;
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .blog-posts {
+            display: grid;
+            gap: 20px;
+            margin-left: 15%;
+        }
+
+        .blog-post {
+            max-width: 1200px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+
+        .blog-content {
+            max-height: 150px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .blog-content.expanded {
+            max-height: none;
+        }
+
+        .read-more {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+
+        .read-more:hover {
+            background-color: #0056b3;
+        }
+
+        .show-all {
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+            padding: 12px 24px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        .show-all:hover {
+            background-color: #218838;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .blog-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            padding: 14px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/home.html#about">About Me</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="/home.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>My Blog</h1>
+        <p>Welcome to my personal blog where I share my thoughts and experiences</p>
+    </header>
+
+    <main class="blog-posts">
+        <article class="blog-post">
+            <h2>New year Post</h2>
+            <!-- <div class="blog-date">January 3, 2025</div> -->
+            <div class="blog-content">
+                <!-- <p>This was the first new years where I felt nothing new about it, there was no cheers for me. I did not even shout happy new yearrrr! I felt indifferent. I felt old and the reminder that I will have to go to work the next morning. I asked people around and they felt the same way. Are celebratory days losing their charm? Or is it just me? </p>
+                I feel a reason behind this is the over commercialization of these days. From Navratri to Diwali, you have to spend something to do something "Special". I called up my friends late at night. Looking at their plans I finally felt some re-joice that someone is going to have a wild time. Anyways, I hope you had a great new year. And wishing you great energy and health this year.<br> <br> -->
+            </div>
+            <button class="read-more">Read More</button>
+        </article>
+
+        <article class="blog-post">
+            <h2>The Future of AI in 2025</h2>
+            <div class="blog-date">January 2, 2025</div>
+            <div class="blog-content">
+                <p>Artificial Intelligence continues to evolve at an unprecedented pace. In this post, I'll explore some of the most exciting developments...
+                From advanced language models to autonomous systems, the applications of AI are becoming increasingly sophisticated...
+                However, with these advancements come important ethical considerations that we must address as a society...</p><br><br>
+            </div>
+            <button class="read-more">Read More</button>
+        </article>
+
+        <article class="blog-post">
+            <h2>My Photography Journey</h2>
+            <div class="blog-date">January 1, 2025</div>
+            <div class="blog-content">
+                <p>Photography has been a passion of mine for years. In this post, I'll share my experience with different photography styles and equipment...
+                One of the most challenging aspects of photography is learning to see the world differently. It's not just about having good equipment...
+                I've found that the best way to improve is to practice regularly and don't be afraid to experiment with different techniques...</p><br><br>
+
+            </div>
+            <button class="read-more">Read More</button>
+        </article>
+    </main>
+
+    <button class="show-all">Show All Posts</button>
+
+    <script>
+        // Data structure to store blog posts
+        const blogPosts = [
+            {
+                title: "New year Post",
+                date: new Date("2025-01-01"),
+                content: `
+                <p>This was the first new years where I felt nothing new about it, there was no cheers for me. I did not even shout happy new yearrrr! I felt indifferent. I felt old and the reminder that I will have to go to work the next morning. I asked people around and they felt the same way. Are celebratory days losing their charm? Or is it just me? </p>
+                I feel a reason behind this is the over commercialization of these days. From Navratri to Diwali, you have to spend something to do something "Special". I called up my friends late at night. Looking at their plans I finally felt some re-joice that someone is going to have a wild time. Anyways, I hope you had a great new year. And wishing you great energy and health this year.<br> <br>
+                `
+            },
+            {
+                title: "Bye Bye Aagam!",
+                date: new Date("2024-09-09"),
+                content: `
+                It just feels like yesterday when you first came here when I was in 4th. I think our families has had a very intertwined relationship, from me, Aneri and Uncle going to Tuition to the Undhiyus, Pastas and Wraps. So many games of cricket and football and my victories in TT. I definitely feel my JEE journey would not have been possible without you and the time, I made you the best director. That was mega mega fun. It was so fulfilling doing footfinity. I wish you all the very best on this new journey. Until next time. I hope you miss my questions tho 🤣
+                `
+            },
+            // {
+            //     title: "",
+            //     date: new Date("2024-12-29"),
+            //     content: `
+
+            //     `
+            // }
+        ];
+
+        // Sort posts by latest date first
+        blogPosts.sort((a, b) => b.date - a.date);
+
+        // Function to render posts
+        function createBlogPost(post) {
+            const article = document.createElement("article");
+            article.className = "blog-post";
+            article.innerHTML = `
+                <h2>${post.title}</h2>
+                <div class="blog-date">${post.date.toDateString()}</div>
+                <div class="blog-content">${post.content}</div>
+                <button class="read-more">Read More</button>
+            `;
+
+            const readMoreButton = article.querySelector(".read-more");
+            readMoreButton.addEventListener("click", () => {
+                const content = article.querySelector(".blog-content");
+                content.classList.toggle("expanded");
+                readMoreButton.textContent = content.classList.contains("expanded") ? "Read Less" : "Read More";
+            });
+
+            return article;
+        }
+
+        // Initial rendering of 3 posts
+        const blogPostsContainer = document.querySelector(".blog-posts");
+        const showAllButton = document.querySelector(".show-all");
+        let showingAll = false;
+
+        function renderPosts(showAll = false) {
+            // Clear existing posts
+            blogPostsContainer.innerHTML = "";
+
+            // Get posts to display
+            const postsToShow = showAll ? blogPosts : blogPosts.slice(0, 3);
+
+            postsToShow.forEach((post) => {
+                const postElement = createBlogPost(post);
+                blogPostsContainer.appendChild(postElement);
+            });
+
+            showAllButton.textContent = showAll ? "Show Less Posts" : "Show All Posts";
+        }
+
+        // Initial render (show only the first 3 posts)
+        renderPosts();
+
+        // Toggle show all posts
+        showAllButton.addEventListener("click", () => {
+            showingAll = !showingAll;
+            renderPosts(showingAll);
+        });
+
+    </script>
+</body>
+</html>
